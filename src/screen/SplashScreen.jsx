@@ -43,7 +43,7 @@ export default function SplashScreen({ navigation }) {
         </Animated.View>
 
         <Animated.View style={[styles.nurseContainer, { transform: [{ translateY: slideUp }] }]}>
-          <Image source={Nurse} style={styles.nurseImage} resizeMode='cover' />
+          <Image source={Nurse} style={styles.nurseImage} resizeMode='contain' />
         </Animated.View>
 
         <View style={styles.iconButtonContainer}>
@@ -87,7 +87,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   nurseImage: {
-    top: -10,
+    top: -30,
+    height:400,
+    width:250
   },
   iconButtonContainer: {
     margin: 20,
