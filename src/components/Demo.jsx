@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { View, Text } from 'react-native';
 
-function Demo() {
-    return (
-        <div>Demo</div>
-    )
+export default function Demo() {
+  return (
+    <View>
+      <Text>Demo</Text>
+     </View>
+  );
 }
-
-export default Demo
