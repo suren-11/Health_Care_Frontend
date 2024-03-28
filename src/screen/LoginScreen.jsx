@@ -35,7 +35,7 @@ export default function LoginScreen({navigation}) {
           <Pressable
             style={({ pressed }) => [{ backgroundColor: pressed ? '#e0f4f1' : '#1C93F3' },
             styles.button]}
-            onPress={()=> navigation.navigate('HomeScreen')}
+            onPress={()=> navigation.navigate('DashBoard')}
           >
             <Text style={styles.buttonText}>Login</Text>
           </Pressable>

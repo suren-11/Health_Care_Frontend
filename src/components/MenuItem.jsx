@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-const MenuItem = ({ icon, label, onPress }) => {
+const MenuItem = ({ icon, label, navigation }) => {
     return (
-        <TouchableOpacity style={styles.menuItem} >
+        <TouchableOpacity style={styles.menuItem} onPress={()=> navigation.navigate(label)}>
             <Image source={icon} style={styles.icon} resizeMode="cover" />
             <Text style={styles.label}>{label}</Text>
         </TouchableOpacity>
