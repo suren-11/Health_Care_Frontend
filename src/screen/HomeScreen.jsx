@@ -5,7 +5,7 @@ import menuItems from '../data/data';
 import Logo from '../images/logo.png'
 
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor={'#179DFF'} />
@@ -14,16 +14,13 @@ const HomeScreen = () => {
           <View style={{}}>
             <Image source={Logo} style={styles.logo} resizeMode='contain' />
           </View>
-
           <View>
             <Text style={styles.title}>Welcome</Text>
           </View>
-
         </View>
-
         <View style={styles.menuGrid}>
           {menuItems.map((item, index) => (
-            <MenuItem key={index} icon={item.icon} label={item.label} />
+            <MenuItem key={index} icon={item.icon} label={item.label} navigation = {navigation} />
           ))}
         </View>
       </ScrollView>
@@ -34,7 +31,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#F5F6F6',
   },
   logo: {
     height: 90,
@@ -54,7 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: '100%',
     padding: 20,
-    backgroundColor: 'white', //'#f5f8fa'
+    backgroundColor: '#F5F6F6', //'#f5f8fa'
     top: -20,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
