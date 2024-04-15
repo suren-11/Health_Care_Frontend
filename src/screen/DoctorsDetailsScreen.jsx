@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView ,Pressable} from 'react-native';
 import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
 
-const DoctorsDetailsScreen = ({ route }) => {
+const DoctorsDetailsScreen = ({ route, navigation }) => {
     const { doctor } = route.params;
 
     return (
@@ -30,6 +30,7 @@ const DoctorsDetailsScreen = ({ route }) => {
                     <Pressable
                         style={({ pressed }) => [{ backgroundColor: pressed ? '#e0f4f1' : '#1C93F3' },
                         styles.button]} 
+                        onPress={()=> navigation.navigate('BookingScreen', {doctor : doctor})}
                     >
                         <Text style={styles.buttonText}>Book Now</Text>
                     </Pressable>
