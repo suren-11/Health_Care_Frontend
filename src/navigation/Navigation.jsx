@@ -12,6 +12,7 @@ import ProfileScreen from '../screen/ProfileScreen';
 import CalculatorScreen from '../screen/CalculatorScreen';
 import DoctorsScreen from '../screen/DoctorsScreen';
 import DoctorsDetailsScreen from '../screen/DoctorsDetailsScreen';
+import BookingScreen from '../screen/BookingScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -64,12 +65,13 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor='white' barStyle='dark-content' />
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Doctors'>
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='DashBoard'>
         <Stack.Screen name='SplashScreen' component={SplashScreen} />
         <Stack.Screen name='LoginScreen' component={LoginScreen} />
         <Stack.Screen name='DashBoard' component={DashBoard} />
-        <Stack.Screen name='Doctors' component={DoctorsScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Find a Doctor', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
+        <Stack.Screen name='Doctors' component={DoctorsScreen} options={{headerShown:false, headerTitleAlign: 'center',title: 'Find a Doctor', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
         <Stack.Screen name='DoctorsDetails' component={DoctorsDetailsScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Doctor Details', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
+        <Stack.Screen name='BookingScreen' component={BookingScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Booking Details', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
