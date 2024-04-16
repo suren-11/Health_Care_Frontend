@@ -11,6 +11,7 @@ import { Chip, Searchbar } from "react-native-paper";
 import doctorsData from "../data/DoctorsData";
 import DoctorCard from "../components/DoctorCard";
 import DoctorSearchBar from "../components/DoctorSearchBar";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const DoctorsScreen = ({ navigation }) => {
   const [selectedSpecialties, setSelectedSpecialties] = useState([]);
@@ -128,6 +129,12 @@ const DoctorsScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar barStyle="dark-content" backgroundColor={"white"} />
+      {/* <View style={{ backgroundColor: 'white', padding: 15, flexDirection: 'row' }}>
+        <Icon name="chevron-back-circle" size={33} color="lightblue" onPress={navigation.goBack} />
+        <View style={{flex:1}}>
+          <Text style={{ alignSelf: 'center', fontSize: 25, fontWeight: 'bold', color:'#1C93F3'}}>Find a Doctor</Text>
+        </View>
+      </View> */}
       <View
         style={{ flex: 0.1, paddingLeft: 16, paddingRight: 16, paddingTop: 10 }}
       >
@@ -135,7 +142,7 @@ const DoctorsScreen = ({ navigation }) => {
           searchQuery={searchQuery}
           onSearchQueryChange={setSearchQuery}
           style={styles.searchInput}
-          onClick={()=>{toggleSearchBar()}}
+          onClick={() => { toggleSearchBar() }}
         />
       </View>
       <View style={[styles.container, { flex: 0.9 }]}>
@@ -146,7 +153,6 @@ const DoctorsScreen = ({ navigation }) => {
             keyExtractor={(item) => item.id}
             contentContainerStyle={{}}
             ListHeaderComponent={searchBarClicked ? renderHeader : null}
-            // Style and other props for FlatList
           />
         </View>
       </View>
@@ -171,20 +177,16 @@ const styles = StyleSheet.create({
   chip: {
     marginRight: 5,
     marginBottom: 8,
-    // Add additional styles to match the provided image
     backgroundColor: "lightblue", // Example color
     borderRadius: 20, // Example border radius
   },
   selectedChip: {
-    backgroundColor: "deepskyblue", // Or another color to indicate selection
+    backgroundColor: "deepskyblue",
   },
   searchInput: {
-    // marginVertical: 10,
     borderWidth: 1,
-    borderColor: "lightblue",
+    borderColor: "#1C93F3",
     backgroundColor: "white",
-
-    // borderRadius: 6,
   },
 });
 

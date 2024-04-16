@@ -11,25 +11,14 @@ import {
 import React, { useState } from "react";
 import { RadioButton, Avatar } from "react-native-paper";
 import appointment from "../data/appointment";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const BookingScreen = ({ route }) => {
   const { doctor } = route.params;
 
   const [checked, setChecked] = useState("first");
-  const [showDatePicker, setShowDatePicker] = useState(false);
-  const [date, setDate] = useState(new Date());
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const toggleDatePicker = () => {
-    setShowDatePicker(!showDatePicker);
-  };
-
-  const handleDateChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShowDatePicker(Platform.OS === "ios"); // For iOS, we need to handle the modal visibility differently
-    setDate(currentDate);
-  };
 
   const isSlotDisabled = (day, slot) => {
     return appointment.some(
@@ -40,17 +29,15 @@ const BookingScreen = ({ route }) => {
     );
   };
 
-
   const handleSlotSelection = (day, slot) => {
-      setSelectedAppointment({
-        img: doctor.icon,
-        doctor: doctor.name,
-        day: day,
-        slot: slot,
-      });
-      setIsModalVisible(true);
+    setSelectedAppointment({
+      img: doctor.icon,
+      doctor: doctor.name,
+      day: day,
+      slot: slot,
+    });
+    setIsModalVisible(true);
   };
-
 
   const handleConfirm = () => {
     // Add your confirmation logic here
@@ -61,7 +48,7 @@ const BookingScreen = ({ route }) => {
     setSelectedAppointment(null);
     setIsModalVisible(false);
   };
-
+ 
   return (
     <SafeAreaView>
       <ScrollView>
@@ -164,7 +151,6 @@ const BookingScreen = ({ route }) => {
         onRequestClose={() => {
           setIsModalVisible(false);
         }}
-        // animationInTiming={5000}
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
@@ -179,15 +165,26 @@ const BookingScreen = ({ route }) => {
                   {selectedAppointment?.doctor}
                 </Text>
               </View>
-              <Text style={styles.modalText}>
-                Type: {checked === "first" ? "Video Visit" : "Phone Call"}
-              </Text>
-              <Text style={styles.modalText}>
-                Day: {selectedAppointment?.day}
-              </Text>
-              <Text style={styles.modalText}>
-                Time Slot: {selectedAppointment?.slot}
-              </Text>
+              <View style={styles.modalContentDetails}>
+                {checked === "first" ? (
+                  <Icon name="videocam" size={30} color="#1C93F3" />
+                ) : (
+                  <Icon name="call" size={25} color="#1C93F3" />
+                )}
+                <Text style={styles.modalText}>
+                  {checked === "first" ? "Video Visit" : "Phone Call"}
+                </Text>
+              </View>
+              <View style={styles.modalContentDetails}>
+                <Icon name="calendar" size={30} color="#1C93F3" />
+                <Text style={styles.modalText}>{selectedAppointment?.day}</Text>
+              </View>
+              <View style={styles.modalContentDetails}>
+                <Icon name="time" size={30} color="#1C93F3" />
+                <Text style={styles.modalText}>
+                  {selectedAppointment?.slot}
+                </Text>
+              </View>
             </View>
             <View style={styles.buttonContainer}>
               <TouchableOpacity
@@ -239,10 +236,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 5,
   },
+  modalContentDetails: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    padding: 10,
+  },
   modalText: {
     fontSize: 16,
-    // marginBottom: 10,
-    marginVertical: 5,
+    alignSelf: "center",
+    paddingLeft: 15,
   },
   buttonContainer: {
     flexDirection: "row",

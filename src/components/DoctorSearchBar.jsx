@@ -8,9 +8,10 @@ const DoctorSearchBar = ({ searchQuery,onSearchQueryChange, style , onClick}) =>
     <Searchbar
       placeholder="Search by name..."
       onChangeText={onSearchQueryChange}
-      iconColor='lightblue'
+      iconColor='#1C93F3'
       value={searchQuery}
       style={style}
+      placeholderTextColor='#BDC3C7'
       onPressIn={onClick}
     />
   );
