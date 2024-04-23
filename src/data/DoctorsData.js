@@ -103,7 +103,7 @@ const doctorDetails = [
   },
   {
     id: 7,
-    name: "Dr.jany Aredoson",
+    name: "Dr. Jany Aredoson",
     specialty: "Psychiatry",
     experience: 10,
     university: "Yale School of Medicine",

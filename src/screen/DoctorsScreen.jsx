@@ -7,7 +7,7 @@ import {
   StatusBar,
   StyleSheet,
 } from "react-native";
-import { Chip, Searchbar } from "react-native-paper";
+import { Chip } from "react-native-paper";
 import doctorsData from "../data/DoctorsData";
 import DoctorCard from "../components/DoctorCard";
 import DoctorSearchBar from "../components/DoctorSearchBar";
@@ -151,6 +151,7 @@ const DoctorsScreen = ({ navigation }) => {
             data={filteredDoctorsData}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
+            showsVerticalScrollIndicator={false} 
             contentContainerStyle={{}}
             ListHeaderComponent={searchBarClicked ? renderHeader : null}
           />
