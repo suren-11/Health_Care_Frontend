@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { View, SafeAreaView, FlatList, Text, StyleSheet } from 'react-native';
 import { Menu, IconButton, Provider as PaperProvider } from 'react-native-paper';
-import appointment from '../data/appointment'; // your data source
-import AppointmentCard from '../components/AppointmentCard'; // your card component
+import appointment from '../../data/appointment'; // your data source
+import AppointmentCard from '../../components/AppointmentCard'; // your card component
 
 const COLORS = { white: '#FFF' }; // Define your color scheme
 
-const Appointment = () => {
+const Appointment = ({navigation}) => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [data, setData] = useState(appointment);
   const [sortOrder, setSortOrder] = useState(null);
@@ -54,7 +54,7 @@ const Appointment = () => {
           <FlatList
             data={data}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item }) => <AppointmentCard item={item} />}
+            renderItem={({ item }) => <AppointmentCard item={item} navigation ={navigation}/>}
             keyExtractor={(item) => item.id.toString()}
           />
         </View>

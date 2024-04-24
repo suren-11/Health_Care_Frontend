@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ImageBackground, Image, TextInput, StyleSheet, Pressable, ScrollView, SafeAreaView, StatusBar } from 'react-native';
-import backgroundImage from '../images/bgImage.png';
-import Logo from '../images/logo.png';
+import backgroundImage from '../../images/bgImage.png';
+import Logo from '../../images/logo.png';
 
 export default function LoginScreen({ navigation }) {
 

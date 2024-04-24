@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, Text, SafeAreaView, StatusBar, Image } from 'react-native';
-import MenuItem from '../components/MenuItem';
-import menuItems from '../data/data';
-import Logo from '../images/logo.png'
+import MenuItem from '../../components/MenuItem';
+import menuItems from '../../data/data';
+import Logo from '../../images/logo.png'
 
 
 const HomeScreen = ({navigation}) => {

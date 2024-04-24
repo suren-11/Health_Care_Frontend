@@ -8,9 +8,9 @@ import {
   StyleSheet,
 } from "react-native";
 import { Chip } from "react-native-paper";
-import doctorsData from "../data/DoctorsData";
-import DoctorCard from "../components/DoctorCard";
-import DoctorSearchBar from "../components/DoctorSearchBar";
+import doctorsData from "../../data/DoctorsData";
+import DoctorCard from "../../components/DoctorCard";
+import DoctorSearchBar from "../../components/DoctorSearchBar";
 import Icon from "react-native-vector-icons/Ionicons";
 
 const DoctorsScreen = ({ navigation }) => {
