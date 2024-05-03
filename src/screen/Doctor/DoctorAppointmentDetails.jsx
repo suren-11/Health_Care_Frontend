@@ -2,8 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, Pressable } from 'react-native';
 import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
 
-const AppointmentDetails = ({ route, navigation }) => {
-  // Extract doctor and appointments props from route.params
+const DoctorAppointmentDetails = ({ route, navigation }) => {
   const { doctor, appointments } = route.params;
   let icon, specialty, university
   doctor.map((doc) => {
@@ -14,21 +13,23 @@ const AppointmentDetails = ({ route, navigation }) => {
     }
   });
 
-  // Now you can use doctor and appointments in your component
+  const firstLetter = appointments.patientName.charAt(0);
   return (
     <SafeAreaView style={styles.card}>
       <ScrollView>
         <View style={{ margin: 16, flex: 1 }}>
           <View style={styles.profileContainer}>
-            <Avatar.Image
+            {/* <Avatar.Image
               source={icon} // Replace with your image path
               size={150}
               style={styles.avatar}
-            />
+            /> */}
+            <Avatar.Text size={150} label={firstLetter} />
+
             <View style={styles.infoContainer}>
-              <Text style={styles.title}>{appointments.name}</Text>
-              <Text style={styles.subtitle}>{specialty}</Text>
-              <Text style={styles.university}>{university}</Text>
+              <Text style={styles.title}>{appointments.patientName}</Text>
+              {/* <Text style={styles.subtitle}>{specialty}</Text>
+              <Text style={styles.university}>{university}</Text> */}
             </View>
           </View>
           <View style={{ flex: 0.3, backgroundColor: '#D8EEFD', padding: 16, borderRadius: 10, elivation: 10, marginVertical: 15 }}>
@@ -41,7 +42,7 @@ const AppointmentDetails = ({ route, navigation }) => {
               <View key={day}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                   <Text style={styles.detail}>Date                    |</Text>
-                  <Text  style={styles.detail}>{day}</Text>
+                  <Text style={styles.detail}>{day}</Text>
                 </View>
                 <View>
                   {slots.map((slot, index) => (
@@ -65,14 +66,14 @@ const AppointmentDetails = ({ route, navigation }) => {
               styles.button]}
 
             >
-              <Text style={styles.buttonText}>Prescription</Text>
+              <Text style={styles.buttonText}> Write Prescription</Text>
             </Pressable>
             <Pressable
               style={({ pressed }) => [{ backgroundColor: pressed ? '#e0f4f1' : '#1C93F3' },
               styles.button]}
 
             >
-              <Text style={styles.buttonText}>Report</Text>
+              <Text style={styles.buttonText}>Add Report</Text>
             </Pressable>
           </View>
 
@@ -81,9 +82,8 @@ const AppointmentDetails = ({ route, navigation }) => {
       </ScrollView>
 
     </SafeAreaView>
-  );
-};
-
+  )
+}
 const styles = StyleSheet.create({
   card: {
     // elevation: 4,
@@ -162,4 +162,4 @@ const styles = StyleSheet.create({
     padding: 5
   }
 });
-export default AppointmentDetails
+export default DoctorAppointmentDetails

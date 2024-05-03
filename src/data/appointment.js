@@ -6,7 +6,8 @@ const appointment = [
       Monday: ["3:00 PM - 4:00 PM"],
     },
     status: "pending",
-    type: "video"
+    type: "video",
+    patientName: "Alice Johnson"
   },
   {
     id: 5,
@@ -15,17 +16,9 @@ const appointment = [
       Friday: ["9:00 AM - 10:00 AM"]
     },
     status: "accepted",
-    type: "audio"
+    type: "audio",
+    patientName: "Bob Brown"
   },
-  // {
-  //   id: 10,
-  //   name: "Dr. John Doe",
-  //   timeSlots: {
-  //     Friday: ["10:00 AM - 11:00 AM"]
-  //   },
-  //   status: "pending",
-  //   type: "video"
-  // },
   {
     id: 2,
     name: "Dr. Jane Smith",
@@ -33,7 +26,8 @@ const appointment = [
       Tuesday: ["4:00 PM - 5:00 PM"]
     },
     status: "accepted",
-    type: "audio"
+    type: "audio",
+    patientName: "Carol White"
   },
   {
     id: 3,
@@ -42,7 +36,8 @@ const appointment = [
       Monday: ["8:00 AM - 9:00 AM"]
     },
     status: "pending",
-    type: "video"
+    type: "video",
+    patientName: "Dave Green"
   },
   {
     id: 4,
@@ -51,7 +46,8 @@ const appointment = [
       Thursday: ["11:00 AM - 12:00 PM"]
     },
     status: "accepted",
-    type: "audio"
+    type: "audio",
+    patientName: "Eva Gray"
   },
   {
     id: 6,
@@ -60,7 +56,8 @@ const appointment = [
       Saturday: ["8:00 AM - 9:00 AM"]
     },
     status: "pending",
-    type: "video"
+    type: "video",
+    patientName: "Frank Moore"
   },
   {
     id: 7,
@@ -69,17 +66,18 @@ const appointment = [
       Friday: ["10:00 AM - 11:00 AM"]
     },
     status: "accepted",
-    type: "audio"
+    type: "audio",
+    patientName: "Grace Black"
   },
   {
     id: 8,
     name: "Dr. Sarah Bennett",
     timeSlots: {
-      Tuesday: ["9:00 AM - 10:00 AM"],
       Saturday: ["9:00 AM - 10:00 AM"]
     },
     status: "pending",
-    type: "video"
+    type: "video",
+    patientName: "Henry Lee"
   },
   {
     id: 9,
@@ -88,7 +86,8 @@ const appointment = [
       Friday: ["9:00 AM - 10:00 AM"]
     },
     status: "accepted",
-    type: "audio"
+    type: "audio",
+    patientName: "Ivy Taylor"
   }
 ];
 

@@ -18,6 +18,9 @@ import DHomeScreen from '../screen/Doctor/HomeScreen'
 import SignUpScreen from '../screen/Patient/SignUpScreen';
 import AppointmentScreen from '../screen/Patient/AppointmentScreen';
 import AppointmentDetails from '../screen/Patient/AppointmentDetails';
+import DoctorAppointmentScreen from '../screen/Doctor/DoctorAppointmentScreen';
+import DoctorAppointmentDetails from '../screen/Doctor/DoctorAppointmentDetails';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -70,18 +73,20 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor='white' barStyle='dark-content' />
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='AppointmentScreen'>
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='DoctorAppointmentScreen'>
         <Stack.Screen name='SplashScreen' component={SplashScreen} />
         <Stack.Screen name='LoginScreen' component={LoginScreen} />
         <Stack.Screen name='SignUpScreen' component={SignUpScreen}/>
         <Stack.Screen name='DashBoard' component={DashBoard} />
-        <Stack.Screen name='AHomeScreen' component={AHomeScreen}/>
-        <Stack.Screen name='DHomeScreen' component={DHomeScreen}/>
         <Stack.Screen name='AppointmentScreen' component={AppointmentScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Appointments', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
         <Stack.Screen name='Doctors' component={DoctorsScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Find a Doctor', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
         <Stack.Screen name='DoctorsDetails' component={DoctorsDetailsScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Doctor Details', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
         <Stack.Screen name='BookingScreen' component={BookingScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Booking Details', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
         <Stack.Screen name='AppointmentDetails' component={AppointmentDetails} options={{headerShown:true, headerTitleAlign: 'center',title: 'Appointment Details', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
+        <Stack.Screen name='AHomeScreen' component={AHomeScreen}/>
+        <Stack.Screen name='DHomeScreen' component={DHomeScreen}/>
+        <Stack.Screen name='DoctorAppointmentScreen' component={DoctorAppointmentScreen} options={{headerShown:true, headerTitleAlign: 'center',title: 'Appointments', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
+        <Stack.Screen name='DoctorAppointmentDetails' component={DoctorAppointmentDetails} options={{headerShown:true, headerTitleAlign: 'center',title: 'Appointment Details', headerPressColor: '#3A95C2',headerTintColor:'black'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
