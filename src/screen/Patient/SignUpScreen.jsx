@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ImageBackground, Image, StatusBar, TextInput, StyleSheet, Pressable, ScrollView, SafeAreaView } from 'react-native';
-import backgroundImage from '../images/bgImage.png';
-import Logo from '../images/logo.png';
+import backgroundImage from '../../images/bgImage.png';
+import Logo from '../../images/logo.png';
 import { TextInput as PaperTextInput,} from 'react-native-paper';
 
 const SignUpScreen = () => {

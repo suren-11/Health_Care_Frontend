@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, View, Text, ImageBackground, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import backgroundImg from '../images/backgroundSplash.png';
-import Nurse from '../images/Nurse.png';
+import backgroundImg from '../../images/backgroundSplash.png';
+import Nurse from '../../images/Nurse.png'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function SplashScreen({ navigation }) {

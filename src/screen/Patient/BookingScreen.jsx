@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { RadioButton, Avatar } from "react-native-paper";
-import appointment from "../data/appointment";
+import appointment from "../../data/appointment";
 import Icon from "react-native-vector-icons/Ionicons";
 
 const BookingScreen = ({ route }) => {
